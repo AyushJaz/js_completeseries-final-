@@ -79,3 +79,18 @@ if(Object.keys(emptyObject).length===0)
 {
     console.log("Empty object");
 }
+// if(false == 0 && 0 ==''&& false=='')
+//Ans is true 
+
+
+// Nullish Coalescing Operator (??):nill undefined
+let val1 ;
+val1=5 ?? 10;
+val1 = null??10;
+val1= undefined??24;
+console.log(val1);
+
+// ternary operator is completely different from nullish coalascing operator
+let var1=80;
+
+var1<90? console.log("less than 90"): console.log("greater than or equal to 90");;
