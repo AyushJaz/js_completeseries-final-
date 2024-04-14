@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement and append element</title>
+</head>
+<body style="background-color: #212121;">
+    <script>
+        let div =document.createElement('div');
+        div.classList='main';
+        div.setAttribute('id','container')
+        let style= div.style;
+        style.backgroundColor='green';
+        style.color='red';
+        style.border= '800px 500px';
+        style.padding='15px';
+        const addText=document.createTextNode("Hi I am Ayush");
+        div.appendChild(addText);
+        document.body.appendChild(div)
+    </script>
+</body>
+</html>

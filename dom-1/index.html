@@ -15,6 +15,17 @@
     <div class="bg-black">
         <h1 id="title" class="heading">DOM learning on Chai aur code</h1>
         <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, sint?</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, sint?</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, sint?</h2>
+
+        <ul>
+            <li class="names">one</li>
+            <li class="names">tow</li>
+            <li class="names">three</li>
+            <li class="names">four</li>
+        </ul>
+
     </div>
     <script>
         let id=document.getElementById('title');
@@ -35,9 +46,27 @@
         console.log(classAttribute);
         //Note that it will always change the existing attribute first
 
+        // Adding Style to the id title
         id.style.backgroundColor='green';
         id.style.padding='15px';
         id.style.borderRadius='15px';
+
+
+        //qureySelector select the first specified selector in case of multiple copies 
+        document.querySelector('h2').style.backgroundColor='#f34ff2';
+
+         //qureySelector select all the elments of specified selector in.
+         document.querySelectorAll('h2').forEach(li => {
+            li.style.color='green';
+         });
+
+         let c=document.getElementsByClassName('names');
+         console.log(c);
+        let carray= Array.from(c);
+        console.log(carray);
+        carray.forEach((li)=>{
+            li.style.color="orange"
+        })
     </script>
 </body>
-</html>
+</html> 
