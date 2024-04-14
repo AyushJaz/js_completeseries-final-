@@ -48,4 +48,4 @@ let newOj=[
 ]
 for (const key in newOj) {
     console.log(key);
-} 
+}
