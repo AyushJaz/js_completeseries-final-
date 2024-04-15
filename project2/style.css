@@ -1,0 +1,19 @@
+body{
+    font-weight: bold;
+    text-align: center;
+}
+label,input{
+    margin:6px;
+}
+#calculate{
+    background-color: rgb(244, 241, 238);
+    padding: 6px 15px;
+    font-size: large;
+    font-weight: bold;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+input[type=text]{
+    font-size: large;
+}
