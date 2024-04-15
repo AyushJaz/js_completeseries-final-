@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    font-weight: bold;
+}
+.button{
+    display: inline-block;
+    border-radius: 6px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+}
+#grey{
+    background-color: gray;
+}
+#white{
+    background-color: white;
+}
+#blue{
+    background-color: blue;
+}
+#yellow{
+    background-color: yellow;
+}
