@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bgcolor</title>
+    <style>
+        body {
+            background-color: #212121;
+            text-align: center;
+            color: white;
+        }
+
+        button {
+            font-size: large;
+            font-weight: bold;
+            padding: 6px 15px;
+            border-radius: 6px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Color Generetor</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let t;
+        let startButton = document.getElementById("start");
+        let stopButton = document.getElementById("stop");
+        startButton.addEventListener('click',()=>{
+            n=0;
+            interval();
+        })
+        stopButton.addEventListener('click',()=>{
+            n++;
+        })
+        let n=0;
+      function change(){
+                let color = '';
+                for (let i = 1; i <= 6; i++) {
+                    let num = Math.floor(Math.random() * (1000/66));
+                    if (num === 10)
+                        color += 'a';
+                    else if (num === 11)
+                        color += 'b'
+                    else if (num === 12)
+                        color += 'c'
+                    else if (num === 13)
+                        color += 'd'
+                    else if (num === 14)
+                        color += 'e'
+                    else if (num === 15)
+                        color += 'f'
+                    else
+                        color += num;
+                    console.log(color);
+                }
+                document.querySelector('body').style.backgroundColor = `#${color}`;
+                if(n!=0)
+                clearInterval(t)
+            };
+            
+            function interval()
+            {
+                t =setInterval(change,2400);
+                // console.log(n);
+            }
+            
+    </script>
+</body>
+
+</html>
