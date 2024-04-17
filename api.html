@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body>
+    Value	State	                 Description
+     0	    UNSENT	                 Client has been created. open()
+                                     not called yet.
+     1	    OPENED	                 open() has been called.
+     2	    HEADERS_RECEIVED	     send() has been called, and 
+                                     headers and status are available.
+     3	    LOADING	Downloading      responseText holds partial data.
+     4	    DONE	                 The operation is complete.
+</body>
+<script>
+    let xhr= new XMLHttpRequest();
+    let requesUrl='https://api.github.com/users/hiteshchoudhary';
+    xhr.open('GET',requesUrl);//have 2 parameter 1st is the metode and second is the string like source
+
+    xhr.onreadystatechange=()=>{
+        console.log(xhr.readyState);//give the state of the request
+        if(xhr.readyState === 4){
+            const data=JSON.parse(xhr.responseText);
+            let img=document.createElement('img');
+            img.setAttribute('src',data.avatar_url)
+          console.log(img.getAttribute('src'));
+            let body=document.querySelector('body');
+            body.appendChild(img);
+            console.log(data.avatar_url);
+        }
+    }//.onreadystatechange is a property of XHR() that will execute a function if the state of the request changes
+    
+
+    xhr.send();//to call open .open() is not call when written unlike other methode it has to be called seperately send() is the methode tha call open(),.
+    
+</script>
+</html>
