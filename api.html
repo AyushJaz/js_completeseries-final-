@@ -9,16 +9,26 @@
     Value	State	                 Description
      0	    UNSENT	                 Client has been created. open()
                                      not called yet.
+                                     
      1	    OPENED	                 open() has been called.
+
      2	    HEADERS_RECEIVED	     send() has been called, and 
                                      headers and status are available.
+
      3	    LOADING	Downloading      responseText holds partial data.
+ 
      4	    DONE	                 The operation is complete.
 </body>
 <script>
     let xhr= new XMLHttpRequest();
+    console.log(typeof xhr);
+
+    console.log(xhr.readyState);
+
     let requesUrl='https://api.github.com/users/hiteshchoudhary';
-    xhr.open('GET',requesUrl);//have 2 parameter 1st is the metode and second is the string like source
+    xhr.open('GET',requesUrl);//have 2 parameter 1st is the methode and second is the source of the information
+
+    console.log(xhr.readyState);
 
     xhr.onreadystatechange=()=>{
         console.log(xhr.readyState);//give the state of the request
@@ -33,6 +43,7 @@
         }
     }//.onreadystatechange is a property of XHR() that will execute a function if the state of the request changes
     
+    console.log(typeof xhr.onreadystatechange);
 
     xhr.send();//to call open .open() is not call when written unlike other methode it has to be called seperately send() is the methode tha call open(),.
     
